@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6FA"
+    tools:context=".ProfileActivity">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:background="@drawable/bg_header_photo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Kembali"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Profil Saya"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="110dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+
+            <!-- Isi kartu sekarang menggunakan ConstraintLayout, bukan LinearLayout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:padding="18dp"
+                    android:src="@drawable/ic_person"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#1E63D0" />
+
+                <TextView
+                    android:id="@+id/tv_nama"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:textColor="#1B1B1B"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_avatar"
+                    tools:text="Nama" />
+
+                <TextView
+                    android:id="@+id/tv_role"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Mahasiswa || Mobile Developer"
+                    android:textColor="#1E63D0"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_nama" />
+
+                <!-- Baris Email -->
+                <ImageView
+                    android:id="@+id/iv_email_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_gmail"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_role"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#1B1B1B"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_email_icon"
+                    app:layout_constraintTop_toTopOf="@id/iv_email_icon"
+                    tools:text="Email" />
+
+                <!-- Baris WhatsApp/HP -->
+                <ImageView
+                    android:id="@+id/iv_phone_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_phone"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_whatsapp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_email_icon"
+                    app:tint="#1E63D0" />
+
+                <TextView
+                    android:id="@+id/tv_whatsapp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#1B1B1B"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_phone_icon"
+                    app:layout_constraintTop_toTopOf="@id/iv_phone_icon"
+                    tools:text="Nomor Telepon" />
+
+                <!-- Baris Portofolio -->
+                <ImageView
+                    android:id="@+id/iv_link_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_link"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_portofolio"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_phone_icon"
+                    app:tint="#1E63D0" />
+
+                <TextView
+                    android:id="@+id/tv_portofolio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#1B1B1B"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_link_icon"
+                    app:layout_constraintTop_toTopOf="@id/iv_link_icon"
+                    tools:text="Portofolio" />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Saya mahasiswa semester 5 yang senang untuk membangun aplikasi mobile."
+                    android:textColor="#757575"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_link_icon" />
+
+                <!-- 4 tombol aksi: horizontal chain, lebar sama rata (0dp + chain spread) -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_website"
+                    android:layout_width="0dp"
+                    android:layout_height="63dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="6dp"
+                    android:backgroundTint="#1E63D0"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:padding="6dp"
+                    android:text="Kunjugi Website"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_web"
+                    app:iconGravity="top"
+                    app:iconPadding="2dp"
+                    app:iconSize="18dp"
+                    app:iconTint="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_linkedin"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_linkedin"
+                    android:layout_width="0dp"
+                    android:layout_height="63dp"
+                    android:layout_marginEnd="6dp"
+                    android:backgroundTint="#49556F"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:padding="6dp"
+                    android:text="LinkedIn"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_linkedin"
+                    app:iconGravity="top"
+                    app:iconPadding="2dp"
+                    app:iconSize="18dp"
+                    app:iconTint="@color/bg_light"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_website"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_hubungi"
+                    app:layout_constraintStart_toEndOf="@+id/btn_website"
+                    app:layout_constraintTop_toTopOf="@+id/btn_website" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_hubungi"
+                    android:layout_width="0dp"
+                    android:layout_height="63dp"
+                    android:layout_marginEnd="6dp"
+                    android:backgroundTint="#2BAE66"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:padding="6dp"
+                    android:text="Hubungi Saya"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_whatsapp"
+                    app:iconGravity="top"
+                    app:iconPadding="2dp"
+                    app:iconSize="18dp"
+                    app:iconTint="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_website"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_bagikan"
+                    app:layout_constraintStart_toEndOf="@+id/btn_linkedin"
+                    app:layout_constraintTop_toTopOf="@+id/btn_website"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_bagikan"
+                    android:layout_width="0dp"
+                    android:layout_height="63dp"
+                    android:layout_marginBottom="4dp"
+                    android:backgroundTint="#8B5CF6"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:padding="6dp"
+                    android:text="Bagikan Kartu"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_share"
+                    app:iconGravity="top"
+                    app:iconPadding="2dp"
+                    app:iconSize="18dp"
+                    app:iconTint="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_website"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btn_hubungi"
+                    app:layout_constraintTop_toTopOf="@+id/btn_website"
+                    app:layout_constraintVertical_bias="0.083" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,7 +45,6 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp">
 
-            <!-- Isi kartu sekarang menggunakan ConstraintLayout, bukan LinearLayout -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="607dp"

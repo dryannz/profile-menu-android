@@ -41,8 +41,6 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // EXPLICIT INTENT: berpindah ke ProfileActivity di dalam aplikasi yang sama,
-            // sambil mengirim data form melalui putExtra().
             val intent = Intent(this, ProfileActivity::class.java).apply {
                 putExtra(EXTRA_NAMA, nama)
                 putExtra(EXTRA_EMAIL, email)

@@ -23,7 +23,6 @@ class ProfileActivity : AppCompatActivity() {
             insets
         }
 
-        // Data diterima dari MainActivity lewat Explicit Intent
         val nama = intent.getStringExtra(MainActivity.EXTRA_NAMA) ?: ""
         val email = intent.getStringExtra(MainActivity.EXTRA_EMAIL) ?: ""
         val whatsapp = intent.getStringExtra(MainActivity.EXTRA_WHATSAPP) ?: ""
@@ -38,7 +37,6 @@ class ProfileActivity : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.btn_back).setOnClickListener { finish() }
 
-        // IMPLICIT INTENT 1: Kunjungi Website -> membuka URL di browser
         findViewById<Button>(R.id.btn_website).setOnClickListener {
             var url = portofolio
             if (!url.startsWith("http://") && !url.startsWith("https://")) {
@@ -47,7 +45,6 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         }
 
-        // IMPLICIT INTENT 2: Kunjungi linkedIn -> membuka URL di browser
         findViewById<Button>(R.id.btn_linkedin).setOnClickListener {
             var url = linkedin
             if (!url.startsWith("http://") && !url.startsWith("https://")) {
@@ -56,7 +53,6 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         }
 
-        // IMPLICIT INTENT 3: Hubungi Saya -> membuka dial pad dengan nomor terisi
         findViewById<Button>(R.id.btn_hubungi).setOnClickListener {
             var url = whatsapp
             if (!url.startsWith("http://") && !url.startsWith("https://")) {
@@ -68,7 +64,6 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         }
 
-        // IMPLICIT INTENT 4: Bagikan Kartu -> mengirim teks ke aplikasi lain (chooser)
         findViewById<Button>(R.id.btn_bagikan).setOnClickListener {
             val pesan = "Halo, saya $nama\n" +
                     "Saya adalah Mobile Developer.\n\n" +

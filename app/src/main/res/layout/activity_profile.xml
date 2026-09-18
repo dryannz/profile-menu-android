@@ -58,7 +58,6 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp">
 
-            <!-- Isi kartu sekarang menggunakan ConstraintLayout, bukan LinearLayout -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -186,8 +185,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_link_icon" />
-
-                <!-- 4 tombol aksi: horizontal chain, lebar sama rata (0dp + chain spread) -->
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_website"
